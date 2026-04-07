@@ -36,7 +36,7 @@ export function maskAadhaar(aadhaarNumber) {
   )
     return "INVALID";
 
-  const mask = aadhaarNumber.slice(0, 8).replaceAll(/\d/g, "X");
+  const mask = aadhaarNumber.slice(0, 8).replace(/\d/g, "X");
   const maskAadhaar = `${mask.slice(0, 4)}-${mask.slice(4, 8)}-${aadhaarNumber.slice(8, 12)}`;
   return maskAadhaar;
 }
